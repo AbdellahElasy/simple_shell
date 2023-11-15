@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main: program simple shell takes user input .
+ * main - program simple shell takes user input .
  * @ac: the number of command arguments (unused) .
  * @av: comaand-line argument strings array .
  * @env: An array of enviroment varibles .
@@ -43,7 +43,7 @@ int main(int ac, char **av, char **env)
 			{
 				free_token(argumes);
 			}
-			exit(EXIT_SUCCES);
+			exit(EXIT_SUCCESS);
 		}
 		if (compare_string(argumes[0], "exit") == 0)
 		{
@@ -53,9 +53,9 @@ int main(int ac, char **av, char **env)
 		pid = fork();
 		if (pid == 0)
 		{
-			comand_exec(argumes, env);
+			exec_command(argumes, env);
 			perror("Error");
-			exit((EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 					}
 					else if (pid < 0)
 					{

@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 #include <sys/wait.h>
-
+#include <stdlib.h>
 /* declaration of functuons */
 void *_realloc(void *potr, size_t size_n1, size_t size_n2);
 void *_copy_mry(void *adress, const void *srcpy, size_t k);
