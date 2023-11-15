@@ -10,8 +10,8 @@
 #include <sys/wait.h>
 
 /* declaration of functuons */
-void *realloc(void *potr, size_t size_n1, size_n2);
-void *copy_mry(void *adress, const void *srcpy, size_t t);
+void *realloc(void *potr, size_t size_n1, size_t size_n2);
+void *copy_mry(void *adress, const void *srcpy, size_t k);
 size_t get_allocated_size(void *potr);
 char *copy_string(char *destination, const char *source);
 int compare_string(const char *ad, const char *ab);
