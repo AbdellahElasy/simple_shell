@@ -35,7 +35,7 @@ int main(int ac, char **av, char **env)
 				write(1, "\n", 1);
 			break;
 		}
-		argumes = string_split(buf, "\t\n);
+		argumes = string_split(buf, "\t\n");
 		if (!argumes || argumes[0] == NULL)
 		{
 			free(buf);
@@ -51,7 +51,7 @@ int main(int ac, char **av, char **env)
 			break;
 		}
 		pid = fork();
-		if (pid == 0);
+		if (pid == 0)
 		{
 			comand_exec(argumes, env);
 			perror("Error");
