@@ -1,58 +1,60 @@
-#iclude "main.h"
+#include "main.h"
 
-/*
- * copy-mry: Copies 'k' bytes from the memory area to another .
- * @adress: Pointer to the destination memory area .
- * @srcpy: pointer to the source memory area .
- * @k: Number of byets to be copied .
- * return: A pointer to the destination memory area.
+/**
+ * _copy_mry - Copies 'n' bytes from the memory area to another
+ * @adress: Pointer to the destination memory area.
+ * @srcpy: Pointer to the source memory area.
+ * @n: Number of bytes to be copied.
+ *
+ * Return: A pointer to the destination memory area.
  */
-void *copy_mry(void *adress, const void *srcpy, size_t k)
+void *_copy_mry(void *adress, const void *srcpy, size_t n)
 {
 	char *a = adress;
 	const char *s = srcpy;
 
-	if(adress == NULL || srcpy == NULL)
+	if (adress == NULL || srcpy == NULL)
 	{
 		return (NULL);
 	}
-	while (k--)
+	while (n--)
 	{
 		*a++ = *s++;
 	}
 	return (adress);
-
 }
 
-/*
- * realloc: resizes the memory block .
- * @potr: pointer to the memory block to be resized
- * @size_n1: old size of the memory block 
- * @size_n2: new size of the memory block
+/**
+ * _realloc - Resizes the memory block
+ * @ptr: Pointer to the memory block to be resized
+ * @old_size: Old size of the memory block
+ * @up_size: New size of the memory block
  *
  * Return: Pointer to the resized memory block
  */
-void *realloc(void *potr, size_t size_n1, size_t size_n2)
+void *_realloc(void *ptr, size_t old_size, size_t up_size)
 {
 	void *up_ptr;
-	if(size_n2 == 0)
+
+	if (up_size == 0)
 	{
-		free(potr);
-		return(NULL);
-	}
-	if(potr == NULL)
-	{
-		return(malloc(size_n2));
+		free(ptr);
+		return (NULL);
 	}
 
-	up_ptr = malloc(size_n2);
-	if(up_ptr)
+	if (ptr == NULL)
 	{
-		size_t copy_size = (size_n2 < size_n1) ? size_n2 : size_n1;
-		memcpy(size_n2, potr, copy_size);
-		free(potr);
+		return (malloc(up_size));
+	}
 
+	up_ptr = malloc(up_size);
+	if (up_ptr)
+	{
+		size_t copy_size = (up_size < old_size) ? up_size : old_size;
+
+		memcpy(up_ptr, ptr, copy_size);
+
+		free(ptr);
 	}
 	return (up_ptr);
-
 }

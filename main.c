@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * @ac: command-line arguments number .
+ * main: program simple shell takes user input .
+ * @ac: the number of command arguments (unused) .
  * @av: comaand-line argument strings array .
  * @env: An array of enviroment varibles .
- * main - program simple shell takes user input .
  * Return: the last command executed returns .
  */
-int main(int ac, char **av, char **env){
+int main(int ac, char **av, char **env)
+{
 	char *buf = NULL;
 	size_t buf_size = 0;
 	char **argumes = NULL;
@@ -19,40 +20,38 @@ int main(int ac, char **av, char **env){
 	(void)ac;
 	(void)av;
 
-	if(!isatty(STDIN_FILENO))
+	if (!isatty(STDIN_FILENO))
 		intr = 0;
 
 
-	while(1){
-		if(intr)
+	while (1)
+	{
+		if (intr)
 			write(1, "$ ", 2);
 		c_chara = getline(&buf, &buf_size, stdin);
-		if(c_chara == -1)
+		if (c_chara == -1)
 		{
-			if(intr)
+			if (intr)
 				write(1, "\n", 1);
 			break;
-
 		}
 		argumes = string_split(buf, "\t\n);
-		if(!argumes || argumes[0] == NULL)
+		if (!argumes || argumes[0] == NULL)
 		{
 			free(buf);
-			if(argumes)
+			if (argumes)
 			{
 				free_token(argumes);
 			}
 			exit(EXIT_SUCCES);
-
-
 		}
-		if(compare_string(argumes[0], "exit") == 0)
+		if (compare_string(argumes[0], "exit") == 0)
 		{
 			free_token(argumes);
 			break;
 		}
 		pid = fork();
-		if(pid == 0);
+		if (pid == 0);
 		{
 			comand_exec(argumes, env);
 			perror("Error");
@@ -66,7 +65,7 @@ int main(int ac, char **av, char **env){
 					else
 					{
 					wait(&status);
-					if(WIFEXITED(status))
+					if (WIFEXITED(status))
 					{
 					status = WEXITSTATUS(status);
 					}
