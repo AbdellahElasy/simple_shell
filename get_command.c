@@ -35,8 +35,8 @@ char *get_command(char *command)
 			exit(1);
 		}
 		copy_string(comnd_all, strike);
-		concat_stri_strcat(comnd_all, "/");
-		concat_stri_strcat(comnd_all, command);
+		concat_stri_stract(comnd_all, "/");
+		concat_stri_stract(comnd_all, command);
 		if (stat(comnd_all, &strst) == 0)
 		{
 			return (comnd_all);
