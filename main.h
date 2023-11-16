@@ -21,7 +21,7 @@ char *concat_stri_stract(char *address, const char *src);
 char *_get_environ(const char *en_var);
 char *get_command(char *command);
 char **string_split(char *buf, const char *deel);
-void exec_command(char **arguments, char **env);
+void exec_command(char **args, char **env);
 void free_token(char **tokens);
 
 #endif

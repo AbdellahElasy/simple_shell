@@ -6,13 +6,13 @@
  * @env: pointer to an array of strings
  * Return: The function does not return any value
  */
-void exec_command(char **arguments, char **env)
+void exec_command(char **args, char **env)
 {
-	char *comnd = comand_get(arguments[0]);
+	char *comnd = comand_get(args[0]);
 
 	if (comnd)
 	{
-		if (execve(comnd, arguments, env) == -1)
+		if (execve(comnd, args, env) == -1)
 		{
 			perror("error");
 			free(comnd);
