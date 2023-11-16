@@ -6,12 +6,12 @@
  *
  * Return: The size of the memory block allocated for ptr.
  */
-size_t get_allocated_size(void *ptr)
+size_t get_allocated_size(void *potr)
 {
 	const size_t memo_size = sizeof(size_t);
-	size_t *memo_ptr = (size_t *)ptr - 1;
+	size_t *memo_ptr = (size_t *)potr - 1;
 
-	if (ptr == NULL)
+	if (potr == NULL)
 	{
 		return (0);
 	}

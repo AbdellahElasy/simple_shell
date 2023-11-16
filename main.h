@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 /* declaration of functuons */
-void *_realloc(void *potr, size_t size_n1, size_t size_n2);
+void *_realc(void *ptr, size_t old_size, size_t up_size);
 void *_copy_mry(void *adress, const void *srcpy, size_t k);
 size_t get_allocated_size(void *potr);
 char *copy_string(char *address, const char *src);

@@ -9,7 +9,7 @@
  */
 char *concat_stri_stract(char *address, const char *src)
 {
-	char *p = address + Length_string_strlen(address);
+	char *p = address + get_string_length(address);
 
 	while ((*p++ = *src++))
 	{

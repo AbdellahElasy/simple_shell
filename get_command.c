@@ -24,8 +24,8 @@ char *get_command(char *command)
 
 	while (strike)
 	{
-		size_t len_token = Length_string_strlen(strike);
-		size_t len_cmd = Length_string_strlen(command);
+		size_t len_token = get_string_lenght(strike);
+		size_t len_cmd = get_strin_lenght(command);
 
 		comnd_all = (char *)malloc(len_token + len_cmd + 2);
 

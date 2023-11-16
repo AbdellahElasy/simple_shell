@@ -6,11 +6,11 @@
  * @del: pointer to the delimiter string used for splitting
  * Return: returns a pointer to a dynamically allocated array of pointers
  */
-char **string_split(char *buf, const char *del)
+char **string_split(char *buf, const char *deel)
 {
 	char **tok = NULL;
 	int n_tok = 0;
-	char *strike = strtok(buf, del);
+	char *strike = strtok(buf, deel);
 
 	while (strike)
 	{
@@ -31,7 +31,7 @@ char **string_split(char *buf, const char *del)
 		strcpy(tok[n_tok], strike);
 
 		n_tok++;
-		strike = strtok(NULL, del);
+		strike = strtok(NULL, deel);
 	}
 
 	tok = _realc(tok, n_tok * sizeof(char *), (n_tok + 1) * sizeof(char *));

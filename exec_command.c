@@ -8,7 +8,7 @@
  */
 void exec_command(char **args, char **env)
 {
-	char *comnd = comand_get(args[0]);
+	char *comnd = get_command(args[0]);
 
 	if (comnd)
 	{
