@@ -34,9 +34,9 @@ char *get_command(char *command)
 			perror("Memory allocation error");
 			exit(1);
 		}
-		copy_string_strcpy(comnd_all, strike);
-		concat_string_strcat(comnd_all, "/");
-		concat_string_strcat(comnd_all, command);
+		copy_string(comnd_all, strike);
+		concat_stri_strcat(comnd_all, "/");
+		concat_stri_strcat(comnd_all, command);
 		if (stat(comnd_all, &strst) == 0)
 		{
 			return (comnd_all);
