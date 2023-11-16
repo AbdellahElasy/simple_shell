@@ -6,7 +6,7 @@
  *
  * Return: returns a pointer to the value of the specified environment variable
  */
-char *_get_environ(const char *env_var)
+char *_get_environ(const char *en_var)
 {
 	char **environ = __environ;
 	char *key;
@@ -17,11 +17,11 @@ char *_get_environ(const char *env_var)
 		int j = 0;
 
 		key = environ[i];
-		while (env_var[j] && key[j] && env_var[j] == key[j])
+		while (en_var[j] && key[j] && en_var[j] == key[j])
 		{
 			j++;
 		}
-		if (env_var[j] == '\0' && key[j] == '=')
+		if (en_var[j] == '\0' && key[j] == '=')
 		{
 			return (key + j + 1);
 		}
